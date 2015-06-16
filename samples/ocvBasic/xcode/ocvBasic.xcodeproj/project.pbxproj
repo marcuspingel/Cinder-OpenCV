@@ -19,6 +19,8 @@
 		5335ECA269604F49916CFA66 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC8F425F9BE24D559C8CAF37 /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E3CD995A2D6C4B2A88B2019B /* ocvBasicApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B6AE023FA9C477C81118338 /* ocvBasicApp.cpp */; };
+		F71E268B1B30BC9A0013939E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71E268A1B30BC9A0013939E /* IOKit.framework */; };
+		F71E268D1B30BCB00013939E /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71E268C1B30BCB00013939E /* IOSurface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		8D1107320486CEB800E47090 /* ocvBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ocvBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8F425F9BE24D559C8CAF37 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		B11E538E88744BA792F3445F /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = ../../../include/CinderOpenCV.h; sourceTree = "<group>"; };
+		F71E268A1B30BC9A0013939E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F71E268C1B30BCB00013939E /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71E268D1B30BCB00013939E /* IOSurface.framework in Frameworks */,
+				F71E268B1B30BC9A0013939E /* IOKit.framework in Frameworks */,
 				00FFAEB219D4F9B30002CA8E /* AVFoundation.framework in Frameworks */,
 				00FFAEB319D4F9B30002CA8E /* CoreMedia.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
@@ -83,6 +89,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F71E268C1B30BCB00013939E /* IOSurface.framework */,
+				F71E268A1B30BC9A0013939E /* IOKit.framework */,
+				00FFAEB019D4F9B30002CA8E /* AVFoundation.framework */,
+				00FFAEB119D4F9B30002CA8E /* CoreMedia.framework */,
 				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
 				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
 				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
@@ -146,8 +156,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00FFAEB019D4F9B30002CA8E /* AVFoundation.framework */,
-				00FFAEB119D4F9B30002CA8E /* CoreMedia.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -254,8 +262,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ocvBasic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				New_Setting = "";
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
 					../../../lib/macosx/libopencv_calib3d.a,
@@ -298,8 +308,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ocvBasic_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				New_Setting = "";
 				OTHER_LDFLAGS = (
 					"\"$(CINDER_PATH)/lib/libcinder.a\"",
 					../../../lib/macosx/libopencv_calib3d.a,
@@ -338,7 +350,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -355,7 +367,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../include ../../../include/opencv2";
